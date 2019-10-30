@@ -129,9 +129,9 @@ class HashTable:
         old_storage = self.storage
         self.storage = new_storage
         
-        for i in old_storage:
-            if i is not None:
-                curr = i
+        for bucket in old_storage:
+            if bucket is not None:
+                curr = bucket
                 while curr is not None:
                     self.insert(curr.key, curr.value)
                     curr = curr.next
